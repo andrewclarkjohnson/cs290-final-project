@@ -1,0 +1,37 @@
+NOTES
+
+when B: topnav-login-button pressed
+	HIDE-> I, N, O
+	SHOW-> J, K
+	Local Storage: login
+
+
+
+when C: topnav-create-account-button pressed
+	HIDE-> I, N, O
+	SHOW->J, L	
+	Local Storage: login
+
+
+when D: topnav-logout-button pressed
+	HIDE->I, N, O, J, L
+	SHOW->M, H
+	Set message to "You've successfully logged out."
+	Local Storage: intro
+
+when K3 (submit login info) is succesful (i.e. user/password checks out)
+	HIDE->H
+	SHOW->G	
+	Set message to "You've successfully logged out."
+	Local Storage: intro
+
+
+To submit a new album:
+	1. AJAX handles click of E	(topnav-add-new-button)
+	2. jQuery show O, P (main-add-album-container, add-album-intro)
+	3. jQuery hides I, J, N
+	4. O <div id="add-album-intro" > displays dropdown of existing artists. User selects one or can add new one.
+	5. AJAX handles On artist select from dropdown, $("#choose_artist").change(function(){
+	6. AJAX hides P (add-album-intro) and replaces the html in <div id="add-album"> with generated code in log_functions.php	
+		THE problem with genenrated code is that normally AJAX can only look for items that existed at time of first creation
+		BUT it can find later generated stuff via "Event Delegation"

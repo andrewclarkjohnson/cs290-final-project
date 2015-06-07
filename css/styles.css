@@ -1,0 +1,255 @@
+
+
+body {
+	margin: 70px 0px;
+}
+.badge {
+	padding: 3px 9px;
+	font-size: 18px;
+	background-color: #F08080;
+}
+.main-title {
+	padding-top: 40px !important;
+	margin-top:30px ;
+
+}
+
+.jumbotron {
+	padding-top:10px;
+	padding-bottom: 10px;
+}
+
+.jumbotron h3 {
+	font-size: 130%;
+
+}
+.jumbotron p {
+	font-size: 130%;
+
+}
+
+
+.panel .page-header {
+	padding-top: 0px;
+	margin: 0px;
+	padding: 3px 0px 2px;
+
+}
+
+.panel h4 {
+	margin: 0px;
+	padding: 3px 0px 2px;
+}
+
+.panel p {
+	/*text-indent: 20px;*/
+	padding: 2px 0px ;
+}
+
+.panel-body {
+	padding: 15px 15px 5px;
+}
+
+p, li {
+	font-size: 16px;
+}
+
+p.no-indent {
+	text-indent:0px;
+}
+
+p.question_track_name{
+	padding:10px auto 5px;
+	margin:15px 0 0;
+	font-weight: 500;
+}
+
+#topnav-login-button, #topnav-create-account-button, #topnav-logout-button, #topnav-add-new-button, #topnav-quiz-button , #topnav-intro-button{
+	
+	
+	float:right;
+	padding:15px 15px;
+	font-size:18px;
+	line-height:20px;
+	height:50px
+}
+
+#topnav-login-button:hover, #topnav-create-account-button:hover, #topnav-logout-button:hover, #topnav-add-new-button:hover, #topnav-quiz-button:hover, #topnav-intro-button:hover {
+	background-color: #FFCC99;
+}
+
+#left-block{
+	background-color: #f00;
+}
+
+#main-content {
+	/*background-color: yellow;*/
+}
+
+#right-block-container, #my-leaderboard, #alltime-leaderboad, #recent-leaderboard {
+	/*background-color: yellow;*/
+}
+
+.album_name_container{
+	padding: 2px 5px;
+	margin: 3px;
+	border: 1px solid grey;
+	background-color: white;
+	border-radius: 5px;
+}
+
+
+.album_name {
+	padding: 2px 5px;
+	margin: 3px;
+	/*border: 1px solid grey;*/
+	/*background-color: yellow;*/
+	/*border-radius: 5px;*/
+
+}
+
+.active {
+	font-weight: 500;
+	background-color: #FFCC99;
+}
+
+.create-account-link {
+	font-style: italic;
+	font-weight: 500;
+}
+
+.log-in-link {
+	font-style: italic;
+	font-weight: 500;
+}
+
+
+.question_number {
+width: 30px;
+display: inline-block;
+padding:0 5px 0 0;
+
+}
+
+#message {
+	margin: 5px 0px 20px;
+
+}
+
+#main-quiz-container {
+	width: 100%;
+	margin-left: auto ;
+  margin-right: auto ;
+}
+.question_track_name {
+	width: 300px;
+	display: inline-block;
+	padding:0 2px;
+}
+
+.question_album_choices {
+	width: 300px;
+	display: inline-block;
+	padding:0 2px;
+}
+.results_container{
+	padding:0 0 0 5px;
+	display: inline-block;
+}
+
+.form-control {
+	width: 300px;
+	display: inline-block;
+}
+.correct {
+	background-color: #66FF99 !important;
+}
+
+.incorrect {
+	background-color: #FF6666 !important;
+}
+
+.question_container {
+	/*border-bottom: 2px dashed grey;*/
+	padding: 0 0 20px 0;
+	margin: 0;
+
+}
+
+.artist_image {
+	padding: 0 5px 0 0;
+}
+
+.question_track_name {
+	font-weight: 500;
+	font-size: 120%;
+	text-align: center;
+}
+.panel {
+
+}
+
+.score-display{
+	font-weight:500 !important;
+	color: black !important;
+	font-size: 175% !important;
+}
+
+.poor_score_message {
+	color: orange !important;
+}
+
+
+.soso_score_message {
+	color: green !important;
+}
+
+.good_score_message {
+	color: blue !important;
+}
+.leaderboard {
+	text-align: center;
+}
+
+.alert {
+
+	padding: 10px ;
+}
+
+#add-album-intro {
+	/*border-bottom: 2px solid grey;*/
+}
+/*
+.code-indent {
+	padding-left:30px;
+
+}
+.direct-quote {
+	margin-left: 40px;
+	padding-left: 5px;
+	border-left: 5px solid #eee;
+	font-family: 'Handlee', cursive;
+}
+
+.function-name {
+	font-weight: 600;
+}
+
+.folder-name {
+	font-weight: 600;
+	font-style: italic;
+}
+
+.file-name {
+	font-weight: 600;
+	font-style: italic;
+}
+
+.code {
+    font-family: 'Bitter', serif;
+    margin: 0px 0px 10px 30px;
+    padding-left: 5px;
+    border-left: 5px solid #ee0;
+    background-color: #eee;
+}
+*/
