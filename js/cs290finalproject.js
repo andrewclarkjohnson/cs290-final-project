@@ -23,10 +23,12 @@ $(window).load (function()
 
 $("#topnav-intro-button").click(function(){
     $("#main-intro").removeClass("hide");
+    $("#main-content-top").removeClass("hide");
+    $("#main-content").removeClass("hide");
     $("#main-login-container").addClass("hide");
     $("#main-quiz-container").addClass("hide");
     $("#top-panel-container").addClass("hide");
-    ("#bottom-content").addClass("hide");
+    $("#bottom-content").addClass("hide");
     
     $( "body" ).scrollTop( 10 );
 });
@@ -42,7 +44,9 @@ $("#page-container").on("click","#topnav-login-button, .log-in-link", function()
   $("#top-panel-container").addClass("hide");
   $("#create-account-area").addClass("hide");
   $("#main-intro").addClass("hide");
+  $("#bottom-content").addClass("hide");
   $("#message").removeClass("hide");
+  $("#main-content-top").removeClass("hide");
   // $("#message").text("");
   $( "body" ).scrollTop( 10 );
 
@@ -76,8 +80,10 @@ $(".navbar-fixed-top").on("click","#topnav-logout-button", function(){
      $("#message").removeClass("hide");
      $("#top-panel-container").removeClass("hide");
      $("#main-content").removeClass("hide");
+     $("#main-content-top").removeClass("hide");
      // $("#main-intro").addClass("hide");
      $("#main-quiz-container").addClass("hide");
+     $("#bottom-content").addClass("hide");
       $("#my-leaderboard").parent().addClass("hide");
       $(".navbar-brand").html("Classic Rock Album Track Challenge");
       // $('html, body').animate({ scrollTop: 0 }, 'slow');
@@ -141,11 +147,12 @@ $("#main-login-container").on("click","#submit-login", function(){
      $("#topnav-login-button").addClass("hide");
      $("#topnav-create-account-button").addClass("hide");
      $("#main-login-container").addClass("hide");
+     $("#main-quiz-container").addClass("hide");
      $("#message").removeClass("hide");
      $("#message").html("<p><span class='alert alert-success' role='alert'>Excellent. You are now logged in.</span></p>");
 $(".logged-out-intro-message").addClass("hide");
 $(".logged-in-intro-message").removeClass("hide");
-     $("#main-quiz-container").removeClass("hide");
+     // $("#main-quiz-container").removeClass("hide");
     $("#main-intro").removeClass("hide");
      $("#my-leaderboard").parent().removeClass("hide");
      // $("#my-leaderboard").removeClass("hide");
@@ -226,7 +233,7 @@ $("#create-account-area").on("click","#submit-account", function(){
       if($.trim(html)=='too_short')
       {
 
-       $("#message").html("<span class='alert alert-danger' role='alert'>D'oh. Your username and/or password were too short. They should be between 3 and 15 characters. </span>");
+       $("#message").html("<span class='alert alert-danger' role='alert'>D'oh. Your username and/or password should be between 3 and 15 characters. </span>");
       }
       else 
       {
@@ -363,6 +370,7 @@ console.log (artist_image);
            $( "body" ).scrollTop( 10 );
            $("#message").append(code[0]);
            $("#add-tracks-area").append(code[1]);
+           $("#main-content").removeClass('hide');
            $("#main-content-top").removeClass('hide');
            $("#main-quiz-container").addClass('hide');
            // $("#main-content-top").removeClass('hide');
@@ -413,6 +421,7 @@ $( "body" ).scrollTop( 10 );
   $("#add-tracks-area").addClass("hide");
   $("#bottom-content").addClass("hide");
   $("#main-content").removeClass("hide");
+  $("#main-content-top").removeClass("hide");
   $("#main-quiz-container").removeClass("hide");
   $("#main-quiz-container").html(html);
    $(".topnav-brand").html("Score: - / -");

@@ -543,7 +543,11 @@ if ($action=='create_account') {
 				    	if ($num_row == 0)
 				    	{
 				    		$password =md5($password);
-				    		$new_insert=$mysqli->query ("INSERT INTO users (username, password, last_login) VALUES ('$name', '$password',UTC_TIMESTAMP())");
+				    		// -- $new_insert=$mysqli->query ("INSERT INTO users (username, password, last_login) VALUES ('$name', '$password',UTC_TIMESTAMP())");
+					    	$statement = $mysqli->prepare("INSERT INTO users (username, password, last_login) VALUES (?, ?, UTC_TIMESTAMP())");
+							$statement->bind_param('ss', $name,  $password);
+							$statement->execute(); 
+
 					    	$user_id =$mysqli->insert_id;
 					    	$_SESSION['user_id'] = $user_id ;
 							$_SESSION['username'] =$name;
@@ -762,7 +766,10 @@ if ($action=='add_new_artist') {
 			    				{
 
 
-			    					$new_insert=$mysqli->query ("INSERT INTO artists (artist_name, alternative_name, img) VALUES ('$artist', '$alternative','$artist_image')");
+			    					// $new_insert=$mysqli->query ("INSERT INTO artists (artist_name, alternative_name, img) VALUES ('$artist', '$alternative','$artist_image')");
+									$statement = $mysqli->prepare("INSERT INTO artists (artist_name, alternative_name, img) VALUES (?, ?, ?)");
+									$statement->bind_param('sss', $artist, $alternative,  $artist_image);
+									$statement->execute(); 
 									$artist_id =$mysqli->insert_id;
 									display_artist_list();
 									echo("|||");
@@ -939,7 +946,11 @@ if ($album_name == "")
 			}
 			else 
 		{
-	$new_insert=$mysqli->query ("INSERT INTO albums (artist_id, album_name,album_year) VALUES ('$artist_id', '$album_name','$album_year')");
+	// $new_insert=$mysqli->query ("INSERT INTO albums (artist_id, album_name,album_year) VALUES ('$artist_id', '$album_name','$album_year')");
+	$statement = $mysqli->prepare("INSERT INTO albums (artist_id, album_name,album_year) VALUES ( ?, ?, ?)");
+						$statement->bind_param('isi', $artist_id, $album_name, $album_year);
+						$statement->execute(); 
+
 	$album_id=$mysqli->insert_id;
 
 
@@ -1023,7 +1034,10 @@ if ($action =='add_tracks_to_database')
 				if (!empty($$trk))
 					{
 						$num_new_tracks++;
-						$track_insert=$mysqli->query ("INSERT INTO tracks (album_id, track_name) VALUES ('$album_id', '$track_name')");
+						// -- $track_insert=$mysqli->query ("INSERT INTO tracks (album_id, track_name) VALUES ('$album_id', '$track_name')");
+						$statement = $mysqli->prepare("INSERT INTO tracks (album_id, track_name) VALUES ( ?, ?)");
+						$statement->bind_param('is', $album_id, $track_name);
+						$statement->execute(); 
 					}
 
 			}
@@ -1345,8 +1359,12 @@ $questions_attempted = $_SESSION["questions_attempted"];
 			else 
 			{
 				$user_id=$_SESSION['user_id']; 
-				$new_insert=$mysqli->query ("INSERT INTO quiz_scores (user_id, quiz_date, score) VALUES ('$user_id', UTC_TIMESTAMP(), '$score')");
-			
+				// $new_insert=$mysqli->query ("INSERT INTO quiz_scores (user_id, quiz_date, score) VALUES ('$user_id', UTC_TIMESTAMP(), '$score')");
+				// $time_stamp = UTC_TIMESTAMP();
+				// $time_stamp = "today";
+				$statement = $mysqli->prepare("INSERT INTO quiz_scores (user_id, quiz_date, score) VALUES (?, UTC_TIMESTAMP(), ?)");
+				$statement->bind_param('ii', $user_id,  $score);
+				$statement->execute(); 
 				//update leaderboard code 
 				echo("|||");
 				display_users_best();
